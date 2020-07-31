@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::where('post_cat', 'PUF')->where('post_year', '2008')->orderBy('post_year', 'ASC')->get();
+        $posts = Post::where('post_cat', 'Presentation')->where('post_year', '2018')->orderBy('post_year', 'ASC')->get();
 
         return view('index', compact('posts'));
     }
@@ -26,7 +26,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -37,7 +37,22 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new Post;
+        $post->post_title = $request['post_title'];
+        $post->post_description = $request['post_description'];
+        $post->post_description2 = $request['post_description2'];
+        $post->post_url = $request['post_url'];
+        $post->post_cat = $request['post_cat'];
+        $post->post_type = $request['post_type'];
+        $post->post_survey = $request['post_survey'];
+        $post->post_year = $request['post_year'];
+        $post->pic_file = $request['pic_file'];
+        $post->pdf_path = $request['pdf_path'];
+        $post->date_pub = $request['date_pub'];
+        $post->status = $request['status'];
+        $post->save();
+
+        return redirect()->back()->with('success', 'Successfully inserted!');
     }
 
     /**

@@ -29,6 +29,7 @@
 
             .position-ref {
                 position: relative;
+                margin-top: 5rem;
             }
 
             .top-right {
@@ -67,6 +68,7 @@
         </style>
     </head>
     <body>
+        <a href={{route('get.create')}}><button>Add Post Item</button></a>
         <div class="flex-center position-ref ">
             <div class="content">
                 <table>
