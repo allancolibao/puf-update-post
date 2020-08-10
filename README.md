@@ -1,3 +1,3 @@
 ## About This Application
 
-You can update the post items in ENUT
+Easily update the post

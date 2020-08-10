@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::where('post_cat', 'Presentation')->where('post_year', '2018')->orderBy('post_year', 'ASC')->get();
+        $posts = Post::where('post_cat', 'Presentation')->where('post_year', '2019')->orderBy('post_year', 'ASC')->get();
 
         return view('index', compact('posts'));
     }
